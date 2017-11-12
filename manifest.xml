@@ -1,6 +1,6 @@
 <package>
-  <description brief="gummi_description">gummi_description</description>
+  <description brief="gummi_base_mayo">gummi_base_mayo</description>
   <depend package="gazebo" />
-  <author>me</author>
+  <author>Frederico Belmonte Klein</author>
   <license>BSD</license>
 </package>
