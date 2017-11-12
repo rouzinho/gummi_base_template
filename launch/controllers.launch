@@ -1,0 +1,11 @@
+<launch>
+    <arg name="base" value="mayo" />
+    <arg name="ee" value="mayo" />
+    <!-- env name="GUMMI_BASE" value="$(arg base)"/>
+    <env name="GUMMI_EE" value="$(arg ee)" /-->
+    <include file="$(eval find('gummi_description_' + base) + '/launch/controllers_base.launch')"/>
+    <include file="$(eval find('gummi_description_' + ee) + '/launch/controllers_ee.launch')">
+       <arg name="ee" value="$(arg ee)"/>
+    </include>
+    <!--include file="$(eval find('gummi_description_mayo') + '/launch/controllers_ee.launch')" arg="$(arg ee)"/-->
+</launch>

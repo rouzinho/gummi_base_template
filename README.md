@@ -1,1 +1,1 @@
-# gummi_mayo_base
+# gummi_description_mayo
