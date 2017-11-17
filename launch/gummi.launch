@@ -1,0 +1,10 @@
+<launch>
+  <!-- This file is specific for mayo with the handshake ee. I should think about it more to make this more modular -->  
+  <arg name="base" value="mayo" />
+  <arg name="ee" value="handshake" />
+    <include file="$(eval find('gummi_base_' + base) + '/launch/load_config.launch')" ns="gummi">
+    <arg name="base" value="$(arg base)" />
+    <arg name="ee" value="$(arg ee)" />
+  </include>
+  <node name="gummi" pkg="gummi_interface" type="gummi_arm.py" output="screen"/>
+</launch>

@@ -1,11 +1,11 @@
 <launch>
+    <!-- This file is specific for mayo with the handshake ee. I should think about it more to make this more modular -->  
     <arg name="base" value="mayo" />
     <arg name="ee" value="handshake" />
-    <!-- env name="GUMMI_BASE" value="$(arg base)"/>
-    <env name="GUMMI_EE" value="$(arg ee)" /-->
-    <include file="$(eval find('gummi_base_' + base) + '/launch/controllers_base.launch')"/>
+    <include file="$(eval find('gummi_base_' + base) + '/launch/controllers_base.launch')">
+      <arg name="base" value="$(arg base)"/>
+    </include>
     <include file="$(eval find('gummi_ee_' + ee) + '/launch/controllers_ee.launch')">
        <arg name="ee" value="$(arg ee)"/>
     </include>
-    <!--include file="$(eval find('gummi_description_mayo') + '/launch/controllers_ee.launch')" arg="$(arg ee)"/-->
 </launch>
