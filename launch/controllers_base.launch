@@ -63,7 +63,7 @@
     <rosparam file="$(eval find('gummi_base_' + base) + '/dynamixel/shoulder_pitch_encoder.yaml')" command="load"/>
     <node name="shoulder_pitch_encoder_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
           args="--manager=dxl_manager
-                --port gummi_se
+                --port gummi_ae
                 shoulder_pitch_encoder_controller"
           output="screen"/>
 
@@ -98,7 +98,7 @@
     <rosparam file="$(eval find('gummi_base_' + base) + '/dynamixel/dial_needle.yaml')" command="load"/>
     <node name="dial_needle_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
           args="--manager=dxl_manager
-                --port gummi_se
+                --port gummi_d
                 dial_needle_controller"
           output="screen"/>
 
