@@ -1,5 +1,6 @@
 <!-- -->
 <launch>
+  <arg name="base" value="$(env ROS_GUMMI_BASE)" />
   <arg
     name="model" />
   <arg
@@ -7,7 +8,7 @@
     default="True" />
   <param
     name="robot_description"
-    textfile="$(find gummi_description)/urdf/gummi_description.urdf" />
+    textfile="$(eval find('gummi_base_' + base) + '/urdf/gummi_description.urdf')" />
   <param
     name="use_gui"
     value="$(arg gui)" />
@@ -23,5 +24,5 @@
     name="rviz"
     pkg="rviz"
     type="rviz"
-    args="-d $(find gummi_description)/urdf.rviz" />
+    args="-d $(eval find('gummi_base_' + base) + '/urdf.rviz')" />
 </launch>
