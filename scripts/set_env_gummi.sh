@@ -5,5 +5,5 @@
 # gummi_ee_YYY and gummi_interface. If anything changes in package structure or
 # the order in which catkin_make executes, this might break.
 
-export ROS_GUMMI_BASE=mayo
+export ROS_GUMMI_BASE=template
 export ROS_GUMMI_EE=handshake
