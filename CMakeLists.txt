@@ -196,3 +196,8 @@ catkin_package(
 execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/scripts/update_setupbash.sh
 WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
 )
+
+################ TO GENERATE UDRF FILE #################
+add_custom_target(urdf ALL ${CMAKE_CURRENT_SOURCE_DIR}/scripts/make_urdf.sh
+WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+)
