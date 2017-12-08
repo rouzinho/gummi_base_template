@@ -1,5 +1,11 @@
 <launch>
   <arg name="base" value="$(env ROS_GUMMI_BASE)" />
+  <arg name="param_for_model" value="$(eval '-file' + find('gummi_base_' + base) + 'urdf/gummi_description.urdf -urdf -model gummi_description')"/>
+  <include file = "$(eval find('gummi_base_' + base) + '/launch/controllers_base.launch')">
+    <arg name="msg" value="$(arg param_for_model)"/>
+  </include>
+
+
   <include
     file="$(find gazebo_ros)/launch/empty_world.launch" />
   <node
@@ -11,7 +17,7 @@
     name="spawn_model"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-file $(eval find('gummi_base_' + base) + '/robots/gummi_description.urdf') -urdf -model gummi_description"
+    args="$(param_for_model)"
     output="screen" />
   <node
     name="fake_joint_calibration"
