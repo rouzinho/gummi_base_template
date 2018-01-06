@@ -1,4 +1,4 @@
-# gummi_base_template
+# gummi_base_ghost
 
 This replaces the old gummi_description package, now separated into gummi_base_XXX and gummi_ee_XXX for easier change of end effectors.
 
