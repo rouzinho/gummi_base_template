@@ -1,6 +1,6 @@
 # gummi_base_template
 
-Old gummi_description package, now separated into gummi_base_XXX and gummi_ee_XXX for easier change of end effectors.
+This replaces the old gummi_description package, now separated into gummi_base_XXX and gummi_ee_XXX for easier change of end effectors.
 
 ## Setting up a new base
 
