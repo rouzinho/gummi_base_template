@@ -28,4 +28,8 @@
                     update_rate: 100
         </rosparam>
     </node>
+    <arg name="base" value="$(env ROS_GUMMI_BASE)" />
+    <include file = "$(eval find('gummi_base_' + base) + '/launch/msg_to_screen.launch')">
+      <arg name="msg" value="&quot;*** For help and troubleshooting visit: https://github.com/mstoelen/GummiArm/wiki and https://github.com/GummiArmCE/gummi_base_template/wiki/Troubleshooting ***&quot;"/>
+    </include>
 </launch>
