@@ -6,7 +6,7 @@ equilibrium:
     nameFlexor: "biceps"
     nameExtensor: "triceps"
     servoRange: 6.2832
-    servoOffset: 1.3
+    servoOffset: 0.8
 signEncoder: 1
 signJoint: 1
 name: "elbow"
