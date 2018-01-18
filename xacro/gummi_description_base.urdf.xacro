@@ -22,7 +22,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_template/meshes/base_link.STL" />
+          filename="package://gummi_base_ghost/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -36,7 +36,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_template/meshes/base_link.STL" />
+          filename="package://gummi_base_ghost/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -64,7 +64,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_template/meshes/j1_Link.STL" />
+          filename="package://gummi_base_ghost/meshes/j1_Link.STL" />
       </geometry>
       <material
         name="">
@@ -78,7 +78,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_template/meshes/j1_Link.STL" />
+          filename="package://gummi_base_ghost/meshes/j1_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -127,7 +127,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_template/meshes/j2_Link.STL" />
+          filename="package://gummi_base_ghost/meshes/j2_Link.STL" />
       </geometry>
       <material
         name="">
@@ -141,7 +141,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_template/meshes/j2_Link.STL" />
+          filename="package://gummi_base_ghost/meshes/j2_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -190,7 +190,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_template/meshes/j3_Link.STL" />
+          filename="package://gummi_base_ghost/meshes/j3_Link.STL" />
       </geometry>
       <material
         name="">
@@ -204,7 +204,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_template/meshes/j3_Link.STL" />
+          filename="package://gummi_base_ghost/meshes/j3_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -253,7 +253,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_template/meshes/j4_Link.STL" />
+          filename="package://gummi_base_ghost/meshes/j4_Link.STL" />
       </geometry>
       <material
         name="">
@@ -267,7 +267,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_template/meshes/j4_Link.STL" />
+          filename="package://gummi_base_ghost/meshes/j4_Link.STL" />
       </geometry>
     </collision>
   </link>
