@@ -198,6 +198,6 @@ WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
 )
 
 ################ TO GENERATE UDRF FILE #################
-add_custom_target(urdf ALL ${CMAKE_CURRENT_SOURCE_DIR}/scripts/make_urdf.sh
+add_custom_target(urdfgen ALL ${CMAKE_CURRENT_SOURCE_DIR}/scripts/make_urdf.sh
 WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
 )
