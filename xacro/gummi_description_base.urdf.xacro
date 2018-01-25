@@ -101,7 +101,7 @@
       upper="1.5708"
       effort="0"
       velocity="0" /> -->
-    <limit effort="0" lower="-0.79" upper="1.04" velocity="1.0"/>
+    <limit effort="0" lower="-0.75" upper="1.0" velocity="1.0"/>
   </joint>
 
   <!-- j2_Link -->
@@ -290,6 +290,6 @@
       upper="1.5708"
       effort="0"
       velocity="0" /> -->
-    <limit effort="0" lower="-1.57080" upper="1.57080" velocity="1.0"/>
+    <limit effort="0" lower="-1.56" upper="1.56" velocity="1.0"/>
   </joint>
 </robot>
