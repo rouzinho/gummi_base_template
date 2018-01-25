@@ -101,7 +101,7 @@
       upper="1.5708"
       effort="0"
       velocity="0" /> -->
-    <limit effort="0" lower="-0.52" upper="1.04" velocity="1.0"/>
+    <limit effort="0" lower="-0.79" upper="1.04" velocity="1.0"/>
   </joint>
 
   <!-- j2_Link -->
@@ -164,7 +164,7 @@
       upper="1.5708"
       effort="0"
       velocity="0" /> -->
-    <limit effort="0" lower="-0.55" upper="1.4" velocity="1.0"/>
+    <limit effort="0" lower="-0.95" upper="2.3" velocity="1.0"/>
   </joint>
 
   <!-- j3_Link -->
