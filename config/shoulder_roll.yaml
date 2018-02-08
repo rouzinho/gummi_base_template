@@ -6,7 +6,7 @@ equilibrium:
     nameFlexor: "shoulder_flexor"
     nameExtensor: "shoulder_extensor"
     servoRange: 12.5664
-    servoOffset: 0.79
+    servoOffset: 0.0
 signEncoder: 1
 signJoint: 1
 name: "shoulder_roll"
