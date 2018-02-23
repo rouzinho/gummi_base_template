@@ -8,6 +8,7 @@ project(gummi_base_ghost)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin             REQUIRED COMPONENTS xacro)
+find_python_module(ruamel.yaml REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -199,5 +200,10 @@ WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
 
 ################ TO GENERATE UDRF FILE #################
 add_custom_target(urdfgen ALL ${CMAKE_CURRENT_SOURCE_DIR}/scripts/make_urdf.sh
+WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+)
+
+################ TO GENERATE YAML FILES #################
+add_custom_target(yamlgen ALL ${CMAKE_CURRENT_SOURCE_DIR}/scripts/make_yaml.sh
 WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
 )
