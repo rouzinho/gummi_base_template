@@ -5,17 +5,22 @@ import ruamel.yaml, sys #ruamel preserves comments with round_trip_XXX commands.
 def merge(a, b, path=None):
     "merges b into a"
     if path is None: path = []
-    for key in b:
-        if key in a:
-            if isinstance(a[key], dict) and isinstance(b[key], dict):
-                merge(a[key], b[key], path + [str(key)])
-            elif a[key] == b[key]:
-                pass # same leaf value
+    if b is None:
+        return a
+    elif a is None:
+        return b
+    else:
+        for key in b:
+            if key in a:
+                if isinstance(a[key], dict) and isinstance(b[key], dict):
+                    merge(a[key], b[key], path + [str(key)])
+                elif a[key] == b[key]:
+                    pass # same leaf value
+                else:
+                    raise Exception('Conflict at %s' % '.'.join(path + [str(key)]))
             else:
-                raise Exception('Conflict at %s' % '.'.join(path + [str(key)]))
-        else:
-            a[key] = b[key]
-    return a
+                a[key] = b[key]
+        return a
 
 if  len(sys.argv) != 4:
     raise NameError('Function needs 3 arguments: source_yaml_file_1 source_yaml_file_2  output_yaml_file ')
