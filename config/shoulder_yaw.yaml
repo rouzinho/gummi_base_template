@@ -16,6 +16,6 @@ minAngle: -0.79
 maxAngle: 1.04
 maxAbsForwardError: 0.25
 gains:
-    P: 0.02 #0.015
-    I: 0
+    P: 0.015
+    I: 0.00002
     D: 0.1
