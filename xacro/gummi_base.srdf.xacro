@@ -8,6 +8,8 @@
   <joint name="shoulder_roll" />
   <joint name="shoulder_pitch" />
   <joint name="upperarm_roll" />
+  <joint name="elbow" />
+  <joint name="fastswitch" />
 </xacro:macro>
 
 <xacro:macro name="group_state_right_arm_base">
@@ -15,6 +17,7 @@
   <joint name="shoulder_roll" value="0" />
   <joint name="shoulder_yaw" value="0" />
   <joint name="upperarm_roll" value="0" />
+  <joint name="elbow" value="0" />
 </xacro:macro>
 
 <xacro:macro name="virtual_joints_base">
@@ -47,6 +50,7 @@
   <disable_collisions link1="lowerarm_preroll_u" link2="shoulder_preroll" reason="Never" />
   <disable_collisions link1="lowerarm_preroll_u" link2="upperarm" reason="Adjacent" />
   <disable_collisions link1="lowerarm_preroll_u" link2="upperarm_preroll" reason="Never" />
+  <disable_collisions link1="lowerarm_preroll_u" link2="lowerarm_preroll_d" reason="Adjacent" />
 </xacro:macro>
 
 

@@ -4,17 +4,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.096576 0.093216 -0.5062"
+        xyz="-9.81410393552373E-06 -0.0460000689343235 -0.0065295158451983"
         rpy="0 0 0" />
       <mass
-        value="6.6524" />
+        value="0.335467320988356" />
       <inertia
-        ixx="1.072"
-        ixy="0.0014296"
-        ixz="-0.066318"
-        iyy="1.1363"
-        iyz="0.0042533"
-        izz="0.20948" />
+        ixx="4.37751934245478E-05"
+        ixy="-7.25114187919924E-08"
+        ixz="-1.8551473383786E-07"
+        iyy="3.79746167195594E-05"
+        iyz="-1.48426357415501E-05"
+        izz="5.80238931250525E-06" />
     </inertial>
     <visual>
       <origin
@@ -27,7 +27,7 @@
       <material
         name="">
         <color
-          rgba="0.79216 0.81961 0.93333 1" />
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
@@ -40,23 +40,21 @@
       </geometry>
     </collision>
   </link>
-
-  <!-- j1_Link -->
   <link
     name="shoulder_preroll">
     <inertial>
       <origin
-        xyz="-3.1428E-06 -0.0073636 0.053528"
+        xyz="-2.1762E-05 -0.0041376 0.031717"
         rpy="0 0 0" />
       <mass
-        value="0.42246" />
+        value="0.77225" />
       <inertia
-        ixx="0.0013384"
-        ixy="6.4017E-08"
-        ixz="6.2475E-08"
-        iyy="0.0012663"
-        iyz="0.00011953"
-        izz="0.00092802" />
+        ixx="0.0026527"
+        ixy="1.2427E-07"
+        ixz="5.0677E-07"
+        iyy="0.003032"
+        iyz="4.4108E-05"
+        izz="0.0012294" />
     </inertial>
     <visual>
       <origin
@@ -64,7 +62,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/j1_Link.STL" />
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/shoulder_preroll.STL" />
       </geometry>
       <material
         name="">
@@ -78,48 +76,43 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/j1_Link.STL" />
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/shoulder_preroll.STL" />
       </geometry>
     </collision>
   </link>
-
-  <!-- j1 -->
   <joint
     name="shoulder_yaw"
     type="revolute">
     <origin
-      xyz="0 0 0"
+      xyz="-0.00027025 -0.10997 0.008"
       rpy="0 0 0" />
     <parent
       link="base_link" />
     <child
       link="shoulder_preroll" />
     <axis
-      xyz="0 0 1" />
-    <!-- <limit
-      lower="-1.5708"
-      upper="1.5708"
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.75"
+      upper="1"
       effort="0"
-      velocity="0" /> -->
-    <limit effort="0" lower="-0.75" upper="1.0" velocity="1.0"/>
+      velocity="0" />
   </joint>
-
-  <!-- j2_Link -->
   <link
     name="shoulder">
     <inertial>
       <origin
-        xyz="-7.4885E-05 -0.045317 5.3695E-06"
+        xyz="-6.6912E-05 -0.10412 4.2145E-06"
         rpy="0 0 0" />
       <mass
-        value="0.29147" />
+        value="0.32611" />
       <inertia
-        ixx="0.00040953"
-        ixy="-1.1184E-06"
-        ixz="-1.4753E-06"
-        iyy="0.00026628"
-        iyz="5.6545E-08"
-        izz="0.00048004" />
+        ixx="0.00024984"
+        ixy="-1.3E-06"
+        ixz="1.74E-07"
+        iyy="7.3364E-05"
+        iyz="8.2134E-08"
+        izz="0.0003232" />
     </inertial>
     <visual>
       <origin
@@ -127,7 +120,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/j2_Link.STL" />
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/shoulder.STL" />
       </geometry>
       <material
         name="">
@@ -141,48 +134,43 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/j2_Link.STL" />
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/shoulder.STL" />
       </geometry>
     </collision>
   </link>
-
-  <!-- j2 -->
   <joint
     name="shoulder_roll"
     type="revolute">
     <origin
-      xyz="0 0 0.126"
+      xyz="-2.6378E-05 0.057605 0.1302"
       rpy="0 0 0" />
     <parent
       link="shoulder_preroll" />
     <child
       link="shoulder" />
     <axis
-      xyz="0 -1 0" />
-    <!-- <limit
-      lower="-1.5708"
-      upper="1.5708"
+      xyz="0 1 0" />
+    <limit
+      lower="-0.95"
+      upper="2.3"
       effort="0"
-      velocity="0" /> -->
-    <limit effort="0" lower="-0.95" upper="2.3" velocity="1.0"/>
+      velocity="0" />
   </joint>
-
-  <!-- j3_Link -->
   <link
     name="upperarm_preroll">
     <inertial>
       <origin
-        xyz="-0.0021446 -0.0092567 -0.047728"
+        xyz="0.031774 -0.0098005 -0.046115"
         rpy="0 0 0" />
       <mass
-        value="0.10451" />
+        value="0.11889" />
       <inertia
-        ixx="5.4001E-05"
-        ixy="5.1914E-07"
-        ixz="-6.0861E-06"
-        iyy="7.317E-05"
-        iyz="-6.031E-07"
-        izz="4.6633E-05" />
+        ixx="4.0724E-05"
+        ixy="7.0589E-07"
+        ixz="1.4611E-05"
+        iyy="6.3279E-05"
+        iyz="6.4487E-07"
+        izz="2.3476E-05" />
     </inertial>
     <visual>
       <origin
@@ -190,7 +178,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/j3_Link.STL" />
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/upperarm_preroll.STL" />
       </geometry>
       <material
         name="">
@@ -204,17 +192,15 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/j3_Link.STL" />
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/upperarm_preroll.STL" />
       </geometry>
     </collision>
   </link>
-
-  <!-- j3 -->
   <joint
     name="shoulder_pitch"
     type="revolute">
     <origin
-      xyz="0 -0.1185 0"
+      xyz="-0.024 -0.17679 8.6827E-05"
       rpy="0 0 0" />
     <parent
       link="shoulder" />
@@ -222,30 +208,27 @@
       link="upperarm_preroll" />
     <axis
       xyz="-1 0 0" />
-<!-- <limit
-      lower="-1.5708"
-      upper="1.5708"
+    <limit
+      lower="-0.15"
+      upper="1.1"
       effort="0"
-      velocity="0" /> -->
-    <limit effort="0" lower="-0.15" upper="1.1" velocity="1.0"/>
+      velocity="0" />
   </joint>
-
-  <!-- j4_Link -->
   <link
     name="upperarm">
     <inertial>
       <origin
-        xyz="-0.0024868 -9.272E-05 -0.088372"
+        xyz="-0.0024737 -8.3239E-05 -0.1319"
         rpy="0 0 0" />
       <mass
-        value="0.23537" />
+        value="0.26501" />
       <inertia
-        ixx="0.00067545"
-        ixy="5.6472E-08"
-        ixz="1.0957E-05"
-        iyy="0.00067994"
-        iyz="-1.7347E-06"
-        izz="6.6647E-05" />
+        ixx="0.00079812"
+        ixy="-7.2143E-08"
+        ixz="-4.087E-05"
+        iyy="0.0007849"
+        iyz="-1.9447E-06"
+        izz="2.1965E-05" />
     </inertial>
     <visual>
       <origin
@@ -253,7 +236,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/j4_Link.STL" />
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/upperarm.STL" />
       </geometry>
       <material
         name="">
@@ -267,17 +250,15 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/j4_Link.STL" />
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/upperarm.STL" />
       </geometry>
     </collision>
   </link>
-
-  <!-- j4 -->
   <joint
     name="upperarm_roll"
     type="revolute">
     <origin
-      xyz="0.0135 -0.01 -0.081"
+      xyz="0.056992 -0.010088 -0.035587"
       rpy="0 0 0" />
     <parent
       link="upperarm_preroll" />
@@ -285,72 +266,393 @@
       link="upperarm" />
     <axis
       xyz="0 0 -1" />
-    <!-- <limit
-      lower="-1.5708"
-      upper="1.5708"
+    <limit
+      lower="-1.56"
+      upper="1.56"
       effort="0"
-      velocity="0" /> -->
-    <limit effort="0" lower="-1.56" upper="1.56" velocity="1.0"/>
+      velocity="0" />
+  </joint>
+  <link
+    name="lowerarm_preroll_u">
+    <inertial>
+      <origin
+        xyz="0.030339 -0.01865 -0.003795"
+        rpy="0 0 0" />
+      <mass
+        value="0.034447" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/lowerarm_preroll_u.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/lowerarm_preroll_u.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="elbow"
+    type="revolute">
+    <origin
+      xyz="-0.006 0.0184 -0.23533"
+      rpy="0 0 0" />
+    <parent
+      link="upperarm" />
+    <child
+      link="lowerarm_preroll_u" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.75"
+      upper="0.35"
+      effort="0"
+      velocity="0" />
   </joint>
 
-  <!-- j5_Link -->
-<link
-  name="lowerarm_preroll_u">
-  <inertial>
+  <link
+    name="upperarm_biceps_pulley">
+    <inertial>
+      <origin
+        xyz="-0.0093595 8.3904E-05 3.1839E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.01522" />
+      <inertia
+        ixx="4.2234E-11"
+        ixy="3.7608E-09"
+        ixz="-3.5118E-13"
+        iyy="3.3488E-07"
+        iyz="3.9438E-15"
+        izz="3.3492E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/upperarm_biceps_pulley.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/upperarm_biceps_pulley.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="upperarm_biceps_pulley_joint"
+    type="fixed">
     <origin
-      xyz="0.0480680914336555 -0.0154122894983864 -0.00982448117120333"
+      xyz="0.0375 0 -0.10243"
       rpy="0 0 0" />
-    <mass
-      value="0.0573776116734678" />
-    <inertia
-      ixx="1.98794332161084E-05"
-      ixy="-1.22203388710061E-06"
-      ixz="5.63209252093047E-06"
-      iyy="4.47548061016055E-05"
-      iyz="2.39819214170021E-07"
-      izz="4.43764478788868E-05" />
-  </inertial>
-  <visual>
+    <parent
+      link="upperarm" />
+    <child
+      link="upperarm_biceps_pulley" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="upperarm_triceps_pulley">
+    <inertial>
+      <origin
+        xyz="0.0093595 8.3904E-05 -3.1839E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.01522" />
+      <inertia
+        ixx="4.2234E-11"
+        ixy="-3.7608E-09"
+        ixz="-3.5118E-13"
+        iyy="3.3488E-07"
+        iyz="-3.9438E-15"
+        izz="3.3492E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/upperarm_triceps_pulley.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/upperarm_triceps_pulley.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="upperarm_triceps_pulley_joint"
+    type="fixed">
     <origin
-      xyz="0 -.017 0"
+      xyz="-0.0435 0 -0.12843"
       rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/j5_Link.STL" />
-    </geometry>
-    <material name="">
-      <color rgba="1 0.7 0.7 1"/>
-    </material>
-  </visual>
-  <collision>
+    <parent
+      link="upperarm" />
+    <child
+      link="upperarm_triceps_pulley" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="shoulder_roll_top_pulley">
+    <inertial>
+      <origin
+        xyz="-8.3904E-05 -3.1839E-09 -0.0093595"
+        rpy="0 0 0" />
+      <mass
+        value="0.01522" />
+      <inertia
+        ixx="3.3488E-07"
+        ixy="3.9438E-15"
+        ixz="-3.7608E-09"
+        iyy="3.3492E-07"
+        iyz="3.5118E-13"
+        izz="4.2234E-11" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/shoulder_roll_top_pulley.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/shoulder_roll_top_pulley.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_roll_top_pulley_joint"
+    type="fixed">
     <origin
-      xyz="0 -.017 0"
+      xyz="0.0208 -0.06848 0.043"
       rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/j5_Link.STL" />
-    </geometry>
-  </collision>
-</link>
-
-<!-- j5 -->
-<joint
-  name="elbow"
-  type="revolute">
-  <origin
-    xyz="0 0.01475 -0.19105"
-    rpy="0 0 0" />
-  <parent
-    link="upperarm" />
-  <child
-    link="lowerarm_preroll_u" />
-  <axis
-    xyz="0 -1 0" />
-  <!-- <limit
-    lower="-1.5708"
-    upper="1.5708"
-    effort="0"
-    velocity="0" /> -->
-  <limit effort="0" lower="-0.72" upper="0.32" velocity="1.0"/>
-</joint>
+    <parent
+      link="shoulder" />
+    <child
+      link="shoulder_roll_top_pulley" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="shoulder_roll_bottom_pulley">
+    <inertial>
+      <origin
+        xyz="8.3904E-05 -3.1839E-09 0.0093595"
+        rpy="0 0 0" />
+      <mass
+        value="0.01522" />
+      <inertia
+        ixx="3.3488E-07"
+        ixy="-3.9438E-15"
+        ixz="-3.7608E-09"
+        iyy="3.3492E-07"
+        iyz="-3.5118E-13"
+        izz="4.2234E-11" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/shoulder_roll_bottom_pulley.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/shoulder_roll_bottom_pulley.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_roll_bottom_pulley"
+    type="fixed">
+    <origin
+      xyz="-0.0208 -0.06848 -0.043"
+      rpy="0 0 0" />
+    <parent
+      link="shoulder" />
+    <child
+      link="shoulder_roll_bottom_pulley" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="shoulder_pitch_front_pulley">
+    <inertial>
+      <origin
+        xyz="-0.0087313 -9.2787E-11 -0.00016773"
+        rpy="0 0 0" />
+      <mass
+        value="0.027251" />
+      <inertia
+        ixx="2.8324E-10"
+        ixy="-6.4973E-15"
+        ixz="-1.1745E-08"
+        iyy="4.8733E-07"
+        iyz="-1.5668E-16"
+        izz="4.8705E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/shoulder_pitch_front_pulley.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/shoulder_pitch_front_pulley.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_pitch_pulley_front_joint"
+    type="fixed">
+    <origin
+      xyz="0.067474 -0.024095 0.044"
+      rpy="0 0 0" />
+    <parent
+      link="shoulder_preroll" />
+    <child
+      link="shoulder_pitch_front_pulley" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="shoulder_pitch_back_pulley">
+    <inertial>
+      <origin
+        xyz="0.0087313 9.2787E-11 -0.00016773"
+        rpy="0 0 0" />
+      <mass
+        value="0.027251" />
+      <inertia
+        ixx="2.8324E-10"
+        ixy="-6.4973E-15"
+        ixz="1.1745E-08"
+        iyy="4.8733E-07"
+        iyz="1.5668E-16"
+        izz="4.8705E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/shoulder_pitch_back_pulley.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gummi_base_$(env ROS_GUMMI_BASE)/meshes/shoulder_pitch_back_pulley.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_pitch_back_pulley_joint"
+    type="fixed">
+    <origin
+      xyz="-0.067526 -0.024095 0.044"
+      rpy="0 0 0" />
+    <parent
+      link="shoulder_preroll" />
+    <child
+      link="shoulder_pitch_back_pulley" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
 </robot>
