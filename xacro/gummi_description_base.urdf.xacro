@@ -91,7 +91,7 @@
     <child
       link="shoulder_preroll" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 1" />
     <limit
       lower="-0.75"
       upper="1"
@@ -149,7 +149,7 @@
     <child
       link="shoulder" />
     <axis
-      xyz="0 1 0" />
+      xyz="0 -1 0" />
     <limit
       lower="-0.95"
       upper="2.3"
@@ -323,7 +323,7 @@
     <child
       link="lowerarm_preroll_u" />
     <axis
-      xyz="0 1 0" />
+      xyz="0 -1 0" />
     <limit
       lower="-0.75"
       upper="0.35"
