@@ -2,21 +2,58 @@
 
 This replaces the old gummi_description package, now separated into gummi_base_XXX and gummi_ee_XXX for easier change of end effectors.
 
+## Setting-up
+
+First set up a workspace
+
+    $ mkdir -p catkin_ws/src
+    $ cd catkin_ws/src
+
+Fork or clone this repository:
+
+`$ git clone https://github.com/GummiArmCE/gummi_base_template.git` 
+
+Download a suitable ee package, e. g., handshake:
+
+`$ git clone https://github.com/GummiArmCE/gummi_ee_handshake.git`
+
+To actually move the robot you will need either ros-<YOUR-ROS-DISTRO>-dynamixel-motor package installed or to you can clone the git from https://github.com/arebgun/dynamixel_motor.git . You will also need the gummi_interface package and if you want to use move-it, the gummi_moveit package: 
+
+    $ git clone https://github.com/arebgun/dynamixel_motor.git
+    $ git clone https://github.com/GummiArmCE/gummi_interface.git
+    $ git clone https://github.com/GummiArmCE/gummi_moveit.git
+
+Install all dependencies with rosdep:
+
+`$ rosdep install -y --from-paths . --ignore-src --rosdistro <YOUR-ROS-DISTRO>`
+
+Run catkin_make:
+
+`$ catkin_make`
+
+And source your workspace:
+
+`$ source devel/setup.bash`
+
 ## Setting up a new base
 
-Fork or clone this repository.
-
-Rename gummi_base_template to gummi_base_YOUR_OWN_BASE
+Rename the directory "gummi_base_template" to "gummi_base_YOUR_OWN_BASE"
 
 `$ mv gummi_base_template gummi_base_YOUR_OWN_BASE`
 
-Edit the file gummi_base_YOUR_OWN_BASE/set_env_gummi.sh
+Edit the file "gummi_base_YOUR_OWN_BASE/set_env_gummi.sh"
 
 `$ gedit gummi_base_YOUR_OWN_BASE/set_env_gummi.sh`
 
-And change the line containing "export ROS_GUMMI_BASE=template" to "export ROS_GUMMI_BASE=YOUR_OWN_BASE"
+And change the line containing "export ROS_GUMMI_BASE=template" to "export ROS_GUMMI_BASE=YOUR_OWN_BASE" (required for launch files and by yaml_gen)
 
-You can now proceed to change gummi_base_YOUR_OWN_BASE/launch/controllers_base.launch to contain the motor drivers that your base has and where they are connected in the bus and the updating the yaml definitions of joints in gummi_base_YOUR_OWN_BASE/dynamixel
+Edit the file package.xml
+
+`$ gedit package.xml`
+
+And change `<name>gummi_base_template</name>` to  `<name>gummi_base_YOUR_OWN_BASE</name>` (required finding the meshes - and textures if any- in the urdf file). 
+
+You can now proceed to change "gummi_base_YOUR_OWN_BASE/launch/controllers_base.launch" to contain the motor drivers that your base has and where they are connected in the bus and the updating the yaml definitions of joints in "gummi_base_YOUR_OWN_BASE/dynamixel"
 
 ## Changing Urdf definitions:
 
@@ -30,9 +67,9 @@ TO DO:
  - finish separating yaml files
  - integrate alterations into gummi_interface
 
-## New in this version:
+## New in this version (v1.0.0):
 
-- .yaml files now can be generated for the base+ee pair in build time, but they need to be properly split and the script scripts/make_yaml.sh needs to be changed accordingly
+- First stable and tested version with the dovetail design. Tested with planning via moveit integration. 
 
 ##
 
