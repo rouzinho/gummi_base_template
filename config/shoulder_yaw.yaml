@@ -6,8 +6,7 @@ equilibrium:
     nameFlexor: "horizontal_abductor"
     nameExtensor: "horizontal_adductor"
     servoRange: 12.5664
-    servoOffset: 0.9
-    loadLimit: 0.5  # Testing limitLoad method in equilibrium_model.py.
+    servoOffset: 0.0
 signEncoder: 1
 signJoint: 1
 name: "shoulder_yaw"
@@ -16,6 +15,6 @@ minAngle: -0.79
 maxAngle: 1.04
 maxAbsForwardError: 0.25
 gains:
-    P: 0.015
-    I: 0.00002
+    P: 0.02 #0.015
+    I: 0
     D: 0.1
