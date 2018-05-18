@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>gummi_base_template</name>
-  <version>0.0.0</version>
+  <version>1.0.0</version>
   <description>The gummi_base_template package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
