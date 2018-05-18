@@ -35,6 +35,15 @@ And source your workspace:
 
 `$ source devel/setup.bash`
 
+If you are working with multiple bases and you don't want to create new packages for each, you may also want to add the following lines to your ~/.bashrc file:
+
+    parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    }
+    export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+This is a nice tweak of your shell to show the current branch in which you are working.
+
 ## Setting up a new base
 
 Rename the directory "gummi_base_template" to "gummi_base_YOUR_OWN_BASE"
@@ -70,6 +79,7 @@ TO DO:
 ## New in this version (v1.0.0):
 
 - First stable and tested version with the dovetail design. Tested with planning via moveit integration. 
+- Decided to use branches instead of new repositories to keep all the different base definitions.
 
 ##
 
