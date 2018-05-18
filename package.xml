@@ -4,7 +4,7 @@
   <version>0.0.0</version>
   <description>The gummi_base_template package</description>
 
-  <!-- One maintainer tag required, multiple allowed, one person per tag --> 
+  <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
   <maintainer email="fbklein@todo.todo">fbklein</maintainer>
@@ -40,6 +40,7 @@
   <!-- Use test_depend for packages you need only for testing: -->
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>python-ruamel.yaml</buildtool_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
