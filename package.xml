@@ -13,10 +13,7 @@
   <!-- One license tag required, multiple allowed, one license per tag -->
   <!-- Commonly used license strings: -->
   <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
-  <license>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
-    International License. To view a copy of this license, visit 
-    https://creativecommons.org/licenses/by-sa/4.0/ or send a letter to Creative Commons, 
-    PO Box 1866, Mountain View, CA 94042, USA.</license>
+  <license>CC BY-SA 4.0</license>
 
 
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
