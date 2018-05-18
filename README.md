@@ -17,7 +17,7 @@ Download a suitable ee package, e. g., handshake:
 
 `$ git clone https://github.com/GummiArmCE/gummi_ee_handshake.git`
 
-To actually move the robot you will need either ros-<YOUR-ROS-DISTRO>-dynamixel-motor package installed or to you can clone the git from https://github.com/arebgun/dynamixel_motor.git . You will also need the gummi_interface package and if you want to use move-it, the gummi_moveit package: 
+To actually move the robot you will need either ros-\<YOUR-ROS-DISTRO\>-dynamixel-motor package installed or to you can clone the git from https://github.com/arebgun/dynamixel_motor.git . You will also need the gummi_interface package and if you want to use move-it, the gummi_moveit package: 
 
     $ git clone https://github.com/arebgun/dynamixel_motor.git
     $ git clone https://github.com/GummiArmCE/gummi_interface.git
