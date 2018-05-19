@@ -22,7 +22,7 @@ joints:
     antagonist: True
   elbow:
     effort: 0.001
-    gradual_startup_position: 2.0
+    gradual_startup_position: 0.0
     gradual_startup_time: 1.0
     antagonist: True
   # antagonist: False => direct driven joint
